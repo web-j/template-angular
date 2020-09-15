@@ -1,0 +1,130 @@
+// configurações básicas
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// configuração do dialog do spinner do loading
+div.panel mat-dialog-container {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+$secondary-color: #ff4081;
+
+// configuração do hover de btn
+a:hover {
+    color: $secondary-color;
+}
+
+/*#region configuração de formulários */
+.container-child {
+    height: 100%;
+}
+
+.container-below {
+    padding: 50px;
+
+    mat-card {
+        border-radius: 0;
+    }
+
+    mat-progress-bar {
+        height: 3px;
+    }
+}
+
+#card-content-dorm {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.margin-title-credential {
+    margin-top: 25px;
+    margin-left: 0px;
+}
+
+.margin-title-credential mat-card-subtitle {
+    font-size: 20px;
+}
+/*#endregion */
+
+
+// configurções do toolbar das listas e formulários
+.spacer-toolbar-list {
+    flex: 2 1 auto;
+    font-weight: 400;
+}
+
+.icon-toolbar {
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+.btn-toolbar {
+    width: auto !important;
+    padding: 0 10px !important;
+}
+
+/*#region configurações de estilo da tabela */
+table {
+    width: 100%;
+}
+
+#action-cell {
+    text-align: right !important;
+}
+.mat-column-action {
+    div.mat-sort-header-container {
+        justify-content: flex-end !important;
+    }
+}
+
+.btn-action {
+    display: flex;
+    justify-content: flex-end !important;
+}
+
+.card-icon {
+    border-radius: 0px !important;
+    background-color: $secondary-color;
+    padding: 13px;
+    margin-top: -33px;
+    margin-right: 0px;
+    float: left;
+}
+
+.icon {
+    font-size: 40px;
+    width: 33px;
+    height: 33px;
+    text-align: center;
+    line-height: 40px;
+    color: rgb(255, 255, 255);
+}
+
+.card-header {
+    .mat-card-header-text {
+        margin: -10px 10px;
+    }
+
+    .mat-card-actions,
+    .mat-card-content,
+    .mat-card-subtitle {
+        margin-bottom: 30px;
+    }
+}
+
+.card-actions {
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding: 0px 0 !important;
+}
+/*#endregion */

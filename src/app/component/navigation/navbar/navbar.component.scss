@@ -1,0 +1,17 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.btn-menu {
+    margin-right: 20px;
+}
+
+mat-toolbar {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    height: 50px !important;
+    min-height: 50px !important;
+}

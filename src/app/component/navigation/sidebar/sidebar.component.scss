@@ -1,0 +1,41 @@
+.example-sidenav-container {
+    flex: 1;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+mat-sidenav {
+    width: 250px;
+    position: absolute;
+}
+
+mat-sidenav-container {
+    height: calc(100vh - 50px);
+}
+
+#sidenav {
+    mat-nav-list {
+        padding-top: 0;
+    }
+
+    mat-list-item {
+        height: 50px !important;
+    }
+
+    .font-settings {
+        color: #737375;
+    }
+
+    mat-icon {
+        color: #737375;
+    }
+}

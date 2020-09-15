@@ -1,0 +1,37 @@
+/* Toolbar Options */
+@media screen and (max-width: 600px) {
+    .toolbar-list {
+        justify-content: center !important;
+    }
+
+    .spacer-toolbar-list {
+        display: none;
+    }
+
+    .icon-toolbar {
+        padding: 2px 2px !important;
+        cursor: pointer;
+    }
+
+    .btn-toolbar {
+        width: auto !important;
+    }
+}
+
+@media screen and (max-width: 385px) {
+    .toolbar-list {
+        justify-content: center !important;
+    }
+
+    .toolbar-list span:last-child {
+        display: none;
+    }
+
+    .spacer-toolbar-list {
+        display: none;
+    }
+
+    .btn-toolbar {
+        width: auto !important;
+    }
+}

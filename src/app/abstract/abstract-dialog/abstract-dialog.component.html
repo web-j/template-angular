@@ -1,0 +1,23 @@
+<mat-card class="mat-elevation-z0">
+    <mat-card-header class="row center-xs">
+        <mat-card-title>{{ data.settings.title }}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="row center-xs">
+        <p>{{ data.settings.content }}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+        <div class="row center-xs">
+            <div class="padding-btn">
+                <button mat-raised-button (click)="closeDialog()">{{ data.settings.actionCancel }}</button>
+            </div>
+
+            <div class="padding-btn">
+                <button mat-raised-button color="primary" [mat-dialog-close]="true"
+                    cdkFocusInitial>{{ data.settings.actionConfirm }}</button>
+            </div>
+        </div>
+
+    </mat-card-actions>
+</mat-card>

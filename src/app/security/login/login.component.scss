@@ -1,0 +1,18 @@
+.size-card {
+    max-width: 350px;
+}
+
+.margin-btn {
+    margin-block-end: 10px;
+}
+
+.margin-card {
+    margin: 0;
+    position: absolute;
+    top: 25%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
