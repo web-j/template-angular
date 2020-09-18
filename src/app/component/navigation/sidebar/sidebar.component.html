@@ -1,58 +1,61 @@
-<div class="main-container">
-    <app-navbar (toggleSidenav)="snav.toggle()"></app-navbar>
+<div [ngClass]="{'unicorn-dark-theme': isDarkTheme | async}">
+    <div class="main-container">
+        <app-navbar (toggleSidenav)="snav.toggle()"></app-navbar>
 
-    <mat-sidenav-container class="example-sidenav-container">
-        <mat-sidenav id="sidenav" #snav mode="over" role="navigation" class="mat-elevation-z2">
+        <mat-sidenav-container class="example-sidenav-container">
+            <mat-sidenav id="sidenav" #snav mode="over" role="navigation" class="mat-elevation-z2">
 
 
 
-            <mat-nav-list *ngFor="let item of router; let i=index">
-                <div *ngFor="let rol of item.role">
-                    <div *ngIf="accessRole === rol || rol === ''">
-                        <div *ngIf="item.type === 'link'">
-                            <mat-list-item id="submenu" [routerLink]="[item.path]" routerLinkActive="active-link"
-                                [routerLinkActiveOptions]="{exact: true}">
-                                <mat-icon matListIcon>{{item.icon}}</mat-icon>
-                                <a class="font-settings" matLine>{{item.title}}</a>
-                            </mat-list-item>
-                            <mat-divider></mat-divider>
-                        </div>
-
-                        <div *ngIf="item.type === 'sub'">
-                            <mat-list-item id="submenu" (click)="item.open = !item.open" [matTooltip]="[item.tooltip]" matTooltipPosition="right"
-                                routerLinkActive="selected">
-                                <mat-icon matListIcon>{{item.icon}}</mat-icon>
-                                <a class="font-settings" matLine>{{item.title}}</a>
-                                <mat-icon class="arrow-icon" *ngIf="!item.open">arrow_drop_down</mat-icon>
-                                <mat-icon class="arrow-icon" *ngIf="item.open">arrow_drop_up</mat-icon>
-
-                            </mat-list-item>
-
-                            <div *ngFor="let sub of item.submenu">
-                                <mat-list-item [@inOutAnimation] *ngIf="item.open" [routerLink]="[sub.path]"
-                                    routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
-                                    <mat-icon matListIcon class="sub-menu-icon"
-                                        style="font-size: 14px; margin-left: 5px; margin-top: 10px;">
-                                        panorama_fish_eye
-                                    </mat-icon>
-                                    <a class="font-settings settings-submenu" matLine
-                                        style="padding-left: 0px !important;">{{sub.title}}</a>
+                <mat-nav-list *ngFor="let item of router; let i=index">
+                    <div *ngFor="let rol of item.role">
+                        <div *ngIf="accessRole === rol || rol === ''">
+                            <div *ngIf="item.type === 'link'">
+                                <mat-list-item id="submenu" [routerLink]="[item.path]" routerLinkActive="active-link"
+                                    [routerLinkActiveOptions]="{exact: true}">
+                                    <mat-icon matListIcon>{{item.icon}}</mat-icon>
+                                    <a class="font-settings" matLine>{{item.title}}</a>
                                 </mat-list-item>
+                                <mat-divider></mat-divider>
                             </div>
-                            <mat-divider></mat-divider>
+
+                            <div *ngIf="item.type === 'sub'">
+                                <mat-list-item id="submenu" (click)="item.open = !item.open"
+                                    [matTooltip]="[item.tooltip]" matTooltipPosition="right"
+                                    routerLinkActive="selected">
+                                    <mat-icon matListIcon>{{item.icon}}</mat-icon>
+                                    <a class="font-settings" matLine>{{item.title}}</a>
+                                    <mat-icon class="arrow-icon" *ngIf="!item.open">arrow_drop_down</mat-icon>
+                                    <mat-icon class="arrow-icon" *ngIf="item.open">arrow_drop_up</mat-icon>
+
+                                </mat-list-item>
+
+                                <div *ngFor="let sub of item.submenu">
+                                    <mat-list-item [@inOutAnimation] *ngIf="item.open" [routerLink]="[sub.path]"
+                                        routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+                                        <mat-icon matListIcon class="sub-menu-icon"
+                                            style="font-size: 14px; margin-left: 5px; margin-top: 10px;">
+                                            panorama_fish_eye
+                                        </mat-icon>
+                                        <a class="font-settings settings-submenu" matLine
+                                            style="padding-left: 0px !important;">{{sub.title}}</a>
+                                    </mat-list-item>
+                                </div>
+                                <mat-divider></mat-divider>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </mat-nav-list>
+                </mat-nav-list>
 
 
 
-        </mat-sidenav>
+            </mat-sidenav>
 
-        <mat-sidenav-content role="main">
-            <perfect-scrollbar>
-                <router-outlet></router-outlet>
-            </perfect-scrollbar>
-        </mat-sidenav-content>
-    </mat-sidenav-container>
+            <mat-sidenav-content role="main">
+                <perfect-scrollbar>
+                    <router-outlet></router-outlet>
+                </perfect-scrollbar>
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    </div>
 </div>

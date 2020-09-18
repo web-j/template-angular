@@ -1,7 +1,10 @@
 import { animate, style, transition, trigger } from '@angular/animations';
+import { OverlayContainer } from '@angular/cdk/overlay';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { AuthenticationService } from 'src/app/security/helpers/authentication.service';
+import { ThemeService } from '../../theme/theme.service';
 import { RouterInfo } from './interface/router-info.interface';
 
 @Component({
@@ -61,14 +64,18 @@ export class SidebarComponent implements OnInit {
 
   public accessRole: any;
   public currentUser: any;
+  public isDarkTheme: Observable<boolean>;
 
   constructor(
-    private authenticationService: AuthenticationService
-  ) { }
+    private authenticationService: AuthenticationService,
+    private themeService: ThemeService
+    ) { }
 
   ngOnInit(): void {
     this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
     this.accessRole = this.currentUser.user.accessRole;
+
+    this.isDarkTheme = this.themeService.isDarkTheme;
   }
 
 }

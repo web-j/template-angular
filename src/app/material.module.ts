@@ -127,4 +127,4 @@ import { CommonModule } from '@angular/common';
         { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }
     ]
 })
-export class MaterialModule { }
+export class MaterialModule {}
