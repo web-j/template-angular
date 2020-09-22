@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { AbstractService } from 'src/app/abstract/abstract-service/abstract.service';
 import { CONSTANT_URL } from 'src/app/constant/constant-rest';
-import { User } from 'src/app/security/model/user.model';
+import { User } from '../user-model/user.model';
 
 @Injectable({
   providedIn: 'root'

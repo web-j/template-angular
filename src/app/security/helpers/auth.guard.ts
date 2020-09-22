@@ -19,7 +19,7 @@ export class AuthGuard implements CanActivate {
     public snack: MatSnackBar
   ) { }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     const currentUser = this.authService.currentUserValue;
     if (currentUser) {
 
@@ -35,7 +35,7 @@ export class AuthGuard implements CanActivate {
     return true;
   }
 
-  canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+  canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     const currentUser = this.authService.currentUserValue;
     if (currentUser) {
 

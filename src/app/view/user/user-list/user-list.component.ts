@@ -1,12 +1,11 @@
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
 import { AbstractListDirective } from 'src/app/abstract/abstract-component/abstract-list';
 import { UserService } from '../user-service/user.service';
-import { User } from 'src/app/security/model/user.model';
 import { AbstractAlertService } from 'src/app/abstract/abstract-alert-service/abstract-alert.service';
+import { User } from '../user-model/user.model';
 
 @Component({
   selector: 'app-user-list',

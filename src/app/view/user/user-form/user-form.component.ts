@@ -5,7 +5,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { AbstractAlertService } from 'src/app/abstract/abstract-alert-service/abstract-alert.service';
 
 import { AbstractFormDirective } from 'src/app/abstract/abstract-component/abstract-form';
-import { AccessRole, User } from 'src/app/security/model/user.model';
+import { AccessRole } from 'src/app/security/model/user.model';
+import { User } from '../user-model/user.model';
 import { UserService } from '../user-service/user.service';
 
 @Component({
